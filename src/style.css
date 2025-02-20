@@ -10,3 +10,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+button, form{
+  @apply bg-sky-600 hover:bg-sky-800 hover:scale-105 p-2 text-white rounded-md text-lg hover:cursor-pointer
+}

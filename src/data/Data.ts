@@ -6,10 +6,11 @@ import {
     ForceNodeDatum,
     ForceEdgeDatum,
 } from "v-network-graph/lib/force-layout"
+import {Ref, ref} from "vue";
 console.log(edges_json)
-const nodes: Nodes = nodes_json
+const nodes: Ref<Nodes> = ref(nodes_json)
 
-const edges: Edges = edges_json
+const edges: Ref<Edges> = ref(edges_json)
 
 const layouts: Layouts = {
     nodes: {
