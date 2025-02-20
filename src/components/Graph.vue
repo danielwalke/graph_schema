@@ -41,22 +41,20 @@ function showNodeContextMenu(params: vNG.NodeEvent<MouseEvent>) {
   event.stopPropagation()
   event.preventDefault()
   if (nodeMenu.value) {
-    menuTargetNode.value = data.nodes[node] ?? ""
+    menuTargetNode.value = JSON.stringify(data.nodes[node]) ?? ""
     showContextMenu(nodeMenu.value, event)
   }
 }
 
 const edgeMenu = ref<HTMLDivElement>()
-const menuTargetEdges = ref<string[]>([])
+const menuTargetEdges = ref<string>("")
 function showEdgeContextMenu(params: vNG.EdgeEvent<MouseEvent>) {
   const { edge, event } = params
   // Disable browser's default context menu
   event.stopPropagation()
   event.preventDefault()
-  console.log(edge)
-  console.log(data.edges[edge])
   if (edgeMenu.value) {
-    menuTargetEdges.value = data.edges[edge] ?? ""
+    menuTargetEdges.value = edge ? JSON.stringify(data.edges[edge]) : ""
     showContextMenu(edgeMenu.value, event)
   }
 }
